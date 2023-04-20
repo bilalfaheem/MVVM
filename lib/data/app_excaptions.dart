@@ -19,7 +19,8 @@ class BadRequestException extends AppException {
 }
 
 class UnauthorizedException extends AppException {
-  UnauthorizedException([String? message]) : super(message, "Unauthorised Request");
+  UnauthorizedException([String? message])
+      : super(message, "Unauthorised Request");
 }
 
 class InvalidInputException extends AppException {

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mvvm/res/components/round_button.dart';
 import 'package:mvvm/utils/utils.dart';
+import 'package:mvvm/view_model/auth_view_model.dart';
+import 'package:provider/provider.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -29,6 +31,7 @@ class _LoginViewState extends State<LoginView> {
 
   @override
   Widget build(BuildContext context) {
+    final authViewModel = Provider.of<AuthViewModel>(context);
     return Scaffold(
       body: SafeArea(
           child: Column(
@@ -86,6 +89,7 @@ class _LoginViewState extends State<LoginView> {
           ),
           RoundButton(
               title: "Login",
+              loading: authViewModel.loading,
               onPress: () {
                 if (_emailController.text.isEmpty) {
                   Utils.snackBar("Please enter email", context);
@@ -94,6 +98,12 @@ class _LoginViewState extends State<LoginView> {
                 } else if (_passwordController.text.length < 6) {
                   Utils.snackBar("Please enter 6 digit password", context);
                 } else {
+                  Map data = {
+                    "email": _emailController.text.toString(),
+                    "password": _passwordController.text.toString()
+                  };
+                  print(data);
+                  authViewModel.loginApi(data, context);
                   print("Api Hit");
                 }
               })
