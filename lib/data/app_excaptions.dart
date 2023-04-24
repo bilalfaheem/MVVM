@@ -1,3 +1,7 @@
+
+//implements takes all of the functions and variables form person but it need to redefine them like overide
+//each class extends only one parent class at a time so we use mixin which is extended as with (Mixin cant extends as it is not a class so we use with to get all of his function and variables)
+//extend allow only one class to extends as implements and with allows many classes to use 
 class AppException implements Exception {
   final _message;
   final _prefix;

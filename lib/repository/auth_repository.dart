@@ -1,5 +1,5 @@
-import 'package:mvvm/data/network/BaseApiServices.dart';
-import 'package:mvvm/data/network/NetworkApiServices.dart';
+import 'package:mvvm/data/network/base_api_services.dart';
+import 'package:mvvm/data/network/network_api_services.dart';
 import 'package:mvvm/res/app_url.dart';
 
 class AuthRepository {

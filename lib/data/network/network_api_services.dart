@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 import 'package:mvvm/data/app_excaptions.dart';
-import 'package:mvvm/data/network/BaseApiServices.dart';
+import 'package:mvvm/data/network/base_api_services.dart';
 
 class NetworkApiService extends BaseApiServices {
   @override
